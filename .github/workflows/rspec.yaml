@@ -6,8 +6,8 @@ jobs:
   rspec:
     runs-on: ubuntu-latest
     container: 
-      image: theonestack/cfhighlander:workflow-test
-      options: --user 1001
+      image: theonestack/cfhighlander:latest
+      options: --user 1001 # this user is required as this is the uid used by the checkout step
 
     steps:
     - uses: actions/checkout@v3
