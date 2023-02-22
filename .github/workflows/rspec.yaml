@@ -1,0 +1,16 @@
+name: cftest
+
+on: [workflow_call]
+
+jobs:
+  rspec:
+    runs-on: ubuntu-latest
+    container: theonestack/cfhighlander:latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - run: rspec
+      env:
+        AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ap-southeast-2
