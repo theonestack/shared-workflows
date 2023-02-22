@@ -5,9 +5,13 @@ on: [workflow_call]
 jobs:
   rspec:
     runs-on: ubuntu-latest
-    container: theonestack/cfhighlander:latest
+    container: 
+      image: theonestack/cfhighlander:latest
+      options: -u cfhighlander
 
     steps:
+    - run: whoami
+    - run: id -u cfhighlander
     - uses: actions/checkout@v3
     - run: rspec
       env:
