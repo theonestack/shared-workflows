@@ -6,7 +6,7 @@ jobs:
   rspec:
     runs-on: ubuntu-latest
     container: 
-      image: theonestack/cfhighlander:latest
+      image: theonestack/cfhighlander:workflow-test
       options: --user 1001
 
     steps:
