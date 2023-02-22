@@ -7,11 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: theonestack/cfhighlander:latest
-      options: -u cfhighlander
+      options: --user 1001
 
     steps:
-    - run: whoami
-    - run: id -u cfhighlander
     - uses: actions/checkout@v3
     - run: rspec
       env:
